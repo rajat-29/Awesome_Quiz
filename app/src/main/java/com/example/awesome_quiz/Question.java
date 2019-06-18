@@ -2,7 +2,10 @@ package com.example.awesome_quiz;
 
 // this java file will work as a bridge between our app and database
 
-public class Question {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Question implements Parcelable {
 
     private String question;
     private String option1;
@@ -58,5 +61,15 @@ public class Question {
 
     public void setAnswerNr(int answerNr) {
         this.answerNr = answerNr;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
     }
 }

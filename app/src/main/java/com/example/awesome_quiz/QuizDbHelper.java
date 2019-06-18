@@ -79,9 +79,9 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     }
 
     // retirve question from database
-    public List<Question> getAllQuestions()
+    public ArrayList<Question> getAllQuestions()
     {
-        List<Question> questionList = new ArrayList<>();
+        ArrayList<Question> questionList = new ArrayList<>();
 
         db = getReadableDatabase();
 
