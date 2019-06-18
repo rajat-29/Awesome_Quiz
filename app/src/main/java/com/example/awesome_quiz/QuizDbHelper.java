@@ -52,16 +52,16 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         Question q1 = new Question("A is correct","A","B","C",1);
         addQuestions(q1);
 
-        Question q2 = new Question("B is correct","A","B","C",5);
+        Question q2 = new Question("B is correct","A","B","C",2);
         addQuestions(q2);
 
-        Question q3 = new Question("E is correct","A","B","C",1);
+        Question q3 = new Question("C is correct","A","B","C",3);
         addQuestions(q3);
 
-        Question q4 = new Question("D is correct","A","B","C",2);
+        Question q4 = new Question("A is correct","A","B","C",1);
         addQuestions(q4);
 
-        Question q5 = new Question("C is correct","A","B","C",1);
+        Question q5 = new Question("C is correct","A","B","C",3);
         addQuestions(q5);
     }
 
