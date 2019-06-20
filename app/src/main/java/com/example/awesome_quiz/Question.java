@@ -11,6 +11,10 @@ public class Question implements Parcelable {
     public static final String DIFFICULTY_MEDIUM = "Medium";
     public static final String DIFFICULTY_HARD = "Hard";
 
+    public static final String SUBJECT_1 = "Programming";
+    public static final String SUBJECT_2 = "Geography";
+    public static final String SUBJECT_3 = "Math";
+
 
     private String question;
     private String option1;
@@ -20,15 +24,19 @@ public class Question implements Parcelable {
 
     private String difficulty;
 
+
+    private String subjects;
+
     public Question() {}
 
-    public Question(String question, String option1, String option2, String option3, int answerNr, String difficulty) {
+    public Question(String question, String option1, String option2, String option3, int answerNr, String difficulty, String subjects) {
         this.question = question;
         this.option1 = option1;
         this.option2 = option2;
         this.option3 = option3;
         this.answerNr = answerNr;
         this.difficulty = difficulty;
+        this.subjects = subjects;
     }
 
     protected Question(Parcel in)
@@ -39,6 +47,7 @@ public class Question implements Parcelable {
         option3 = in.readString();
         answerNr = in.readInt();
         difficulty = in.readString();
+        subjects = in.readString();
     }
 
     @Override
@@ -49,6 +58,7 @@ public class Question implements Parcelable {
         dest.writeString(option3);
         dest.writeInt(answerNr);
         dest.writeString(difficulty);
+        dest.writeString(subjects);
     }
 
     public static final Creator<Question> CREATOR = new Creator<Question>() {
@@ -122,6 +132,23 @@ public class Question implements Parcelable {
                 DIFFICULTY_EASY,
                 DIFFICULTY_MEDIUM,
                 DIFFICULTY_HARD,
+        };
+    }
+
+    public String getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(String subjects) {
+        this.subjects = subjects;
+    }
+
+    public static String[] getAllSubjects()
+    {
+        return new String[]{
+                SUBJECT_1,
+                SUBJECT_2,
+                SUBJECT_3,
         };
     }
 }

@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE_QUIZ = 1;
     public static final String EXTRA_DIFFICULTY = "extraDifficulty";
+    public static final String EXTRA_SUBJECT = "extraSubject";
 
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String KEY_HIGHSCORE = "keyHighscore";
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewHighScore;
     private int highscore;
     private Spinner spinnerDifficulty;
+    private Spinner spinnerSubject;
 
     Button buttonStartQuiz;
 
@@ -32,12 +34,19 @@ public class MainActivity extends AppCompatActivity {
 
         textViewHighScore = findViewById(R.id.text_view_highscore);
         spinnerDifficulty = findViewById(R.id.spinner_difficulty);
+        spinnerSubject = findViewById(R.id.spinner_subject);
 
         String[] difficultyLevels = Question.getAllDifficultyLevels();
+        String[] subjectLevels = Question.getAllSubjects();
 
         ArrayAdapter<String> adapterDifficulty = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,difficultyLevels);
         adapterDifficulty.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerDifficulty.setAdapter(adapterDifficulty);
+
+        ArrayAdapter<String> adapterSubject = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,subjectLevels);
+        adapterSubject.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerSubject.setAdapter(adapterSubject);
+
 
         loadHighScore();
 
@@ -54,8 +63,10 @@ public class MainActivity extends AppCompatActivity {
     private void startQuiz()
     {
         String difficulty = spinnerDifficulty.getSelectedItem().toString();
+        String subject = spinnerSubject.getSelectedItem().toString();
         Intent intent = new Intent(MainActivity.this, QuizActivity.class);
         intent.putExtra(EXTRA_DIFFICULTY, difficulty);
+        intent.putExtra(EXTRA_SUBJECT, subject);
         startActivityForResult(intent,REQUEST_CODE_QUIZ);
     }
 

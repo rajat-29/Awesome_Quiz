@@ -35,6 +35,15 @@
         android:freezesText="true"/>
 
     <TextView
+        android:id="@+id/text_view_subject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_difficulty"
+        android:text="Subject: "
+        android:textColor="@android:color/black"
+        android:freezesText="true"/>
+
+    <TextView
         android:id="@+id/text_view_countdown"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

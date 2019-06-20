@@ -37,6 +37,7 @@ public class QuizActivity extends AppCompatActivity {
     private TextView textViewScore;
     private TextView textViewQuestionCount;
     private TextView textViewDifficulty;
+    private TextView textViewSubject;
     private TextView textViewCountDown;
     private RadioGroup rbGroup;
     private RadioButton rb1;
@@ -69,6 +70,7 @@ public class QuizActivity extends AppCompatActivity {
         textViewScore = findViewById(R.id.text_view_score);
         textViewQuestionCount = findViewById(R.id.text_view_question_count);
         textViewDifficulty = findViewById(R.id.text_view_difficulty);
+        textViewSubject = findViewById(R.id.text_view_subject);
         textViewCountDown = findViewById(R.id.text_view_countdown);
         rbGroup = findViewById(R.id.radio_group);
         rb1 = findViewById(R.id.radio_button1);
@@ -81,12 +83,14 @@ public class QuizActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String difficulty = intent.getStringExtra(MainActivity.EXTRA_DIFFICULTY);
+        String subject = intent.getStringExtra(MainActivity.EXTRA_SUBJECT);
 
         textViewDifficulty.setText("Difficulty: " + difficulty);
+        textViewSubject.setText("Subject: " + subject);
 
         if(savedInstanceState == null) {
             QuizDbHelper dbHelper = new QuizDbHelper(this);
-            questionList = dbHelper.getQuestions(difficulty);
+            questionList = dbHelper.getQuestions(difficulty,subject);
             questionCountTotal = questionList.size();
             Collections.shuffle(questionList);
 
