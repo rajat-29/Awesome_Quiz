@@ -13,7 +13,7 @@ import java.util.List;
 public class QuizDbHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "MyAwesomeQuiz.db";
-    private static final int DATABASE_VERSION = 1;
+    public static  int DATABASE_VERSION = 1;
 
     private SQLiteDatabase db;
 
@@ -68,6 +68,15 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
         Question q6 = new Question("A is correct","A","B","C",1, Question.DIFFICULTY_HARD, Question.SUBJECT_3);
         addQuestions(q6);
+    }
+
+    public void addNewQuestion(String questionvalue,String option1value,String option2value,String option3value,int correctvalue,String difficultyvalue,String subjectvalue)
+    {
+        db = getWritableDatabase();
+        Question q1 = new Question(questionvalue,option1value,option2value,option3value,correctvalue, difficultyvalue, subjectvalue);
+        DATABASE_VERSION++;
+        addQuestions(q1);
+        System.out.println("data ayaya ji");
     }
 
     // add ques to database
@@ -153,4 +162,6 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         c.close();
         return questionList;
     }
+
+
 }

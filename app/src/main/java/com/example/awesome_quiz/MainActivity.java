@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Spinner spinnerSubject;
 
     Button buttonStartQuiz;
+    Button addNewQuestions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +52,20 @@ public class MainActivity extends AppCompatActivity {
         loadHighScore();
 
         buttonStartQuiz = findViewById(R.id.button_start_quiz);
+        addNewQuestions = findViewById(R.id.addNewQuestions);
 
         buttonStartQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startQuiz();
+            }
+        });
+
+        addNewQuestions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addQuestions();
             }
         });
     }
@@ -68,6 +78,12 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_DIFFICULTY, difficulty);
         intent.putExtra(EXTRA_SUBJECT, subject);
         startActivityForResult(intent,REQUEST_CODE_QUIZ);
+    }
+
+    private void addQuestions()
+    {
+        Intent intent = new Intent(MainActivity.this, addNewQuestions.class);
+        startActivity(intent);
     }
 
     @Override
