@@ -51,23 +51,67 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
     private void fillQuestionsTable()
     {
-        Question q1 = new Question("A is correct","A","B","C",1, Question.DIFFICULTY_EASY, Question.SUBJECT_1);
-        addQuestions(q1);
 
-        Question q2 = new Question("B is correct","A","B","C",2, Question.DIFFICULTY_MEDIUM, Question.SUBJECT_2);
-        addQuestions(q2);
+        //Programming Questions
 
-        Question q3 = new Question("C is correct","A","B","C",3, Question.DIFFICULTY_MEDIUM, Question.SUBJECT_2);
-        addQuestions(q3);
+        Question q11 = new Question("Who is the father of C Language","Dennis Ritchie","Bjarne Stroustrup","James A. Gosling",1, Question.DIFFICULTY_EASY, Question.SUBJECT_1);
+        addQuestions(q11);
 
-        Question q4 = new Question("C is correct","A","B","C",3, Question.DIFFICULTY_HARD, Question.SUBJECT_3);
-        addQuestions(q4);
+        Question q12 = new Question("C Language developed at ?","Sun MicroSystems","Cambridge University","AT &T's Bell Lab",3, Question.DIFFICULTY_EASY, Question.SUBJECT_1);
+        addQuestions(q12);
 
-        Question q5 = new Question("B is correct","A","B","C",2, Question.DIFFICULTY_HARD, Question.SUBJECT_3);
-        addQuestions(q5);
+        Question q13 = new Question("C programs are converted into machine language with help of ?","Os","Complier","Editor",2, Question.DIFFICULTY_MEDIUM, Question.SUBJECT_1);
+        addQuestions(q13);
 
-        Question q6 = new Question("A is correct","A","B","C",1, Question.DIFFICULTY_HARD, Question.SUBJECT_3);
-        addQuestions(q6);
+        Question q14 = new Question("C was primarily developed as ?","System Programming Language","General Purpose Language","Data Processing Language",1, Question.DIFFICULTY_MEDIUM, Question.SUBJECT_1);
+        addQuestions(q14);
+
+        Question q15 = new Question("Standard ANSI C recognizes number of keywords?","64","32","36",2, Question.DIFFICULTY_HARD, Question.SUBJECT_1);
+        addQuestions(q15);
+
+        Question q16 = new Question("For 16-bit compliler range for integer constant is ?","-32768 to 32767","-32768 to 32167","-32768 to 32867",1, Question.DIFFICULTY_HARD, Question.SUBJECT_1);
+        addQuestions(q16);
+
+        // Geography Questions
+
+        Question q21 = new Question("Which of the following rivers does not flow into the Arabian Sea?","Tungabhadra","Mandovi","Narmada",1, Question.DIFFICULTY_EASY, Question.SUBJECT_2);
+        addQuestions(q21);
+
+        Question q22 = new Question("Which of the following is the highest peak of Satpura Range?","Mahendragiri","Pachmarhi","Dhupgarh",3, Question.DIFFICULTY_EASY, Question.SUBJECT_2);
+        addQuestions(q22);
+
+        Question q23 = new Question("The lacustrine deposits of Kashmir called ‘Karewas’ are known for :","Terrace farming","Saffron Cultivation","Jhum Cultivation",2, Question.DIFFICULTY_MEDIUM, Question.SUBJECT_2);
+        addQuestions(q23);
+
+        Question q24 = new Question("The famous hill-station ‘Kodaikanal’ lies in :","Palani hills","Javadi hills","Cardamom hills",1, Question.DIFFICULTY_MEDIUM, Question.SUBJECT_2);
+        addQuestions(q24);
+
+        Question q25 = new Question("Asia’s largest tulip garden is located in which state?","Sikkim","Jammu & Kashmir","Assam",2, Question.DIFFICULTY_HARD, Question.SUBJECT_2);
+        addQuestions(q25);
+
+        Question q26 = new Question("Barak valley in Assam is famous for which among the following?","Tea Cultivation","Cottage Industries","Bamboo Industry",1, Question.DIFFICULTY_HARD, Question.SUBJECT_2);
+        addQuestions(q26);
+
+        // Maths Questions
+
+        Question q31 = new Question(" The average of first 50 natural numbers is ?","25.5","50.0","20.5",1, Question.DIFFICULTY_EASY, Question.SUBJECT_3);
+        addQuestions(q31);
+
+        Question q32 = new Question("The number of 3-digit numbers divisible by 6 is ?","149","151","150",3, Question.DIFFICULTY_EASY, Question.SUBJECT_3);
+        addQuestions(q32);
+
+        Question q33 = new Question("The period of | sin (3x) | is ","2π / 3 ","π / 3 ","π / 4 ",2, Question.DIFFICULTY_MEDIUM, Question.SUBJECT_3);
+        addQuestions(q33);
+
+        Question q34 = new Question("If f(x) is an odd function, then | f(x) | is ","an even function ","an odd function ","even and odd",1, Question.DIFFICULTY_MEDIUM, Question.SUBJECT_3);
+        addQuestions(q34);
+
+        Question q35 = new Question("If Log 4 (x) = 12, then log 2 (x / 4) is equal to ","12","22","32",2, Question.DIFFICULTY_HARD, Question.SUBJECT_3);
+        addQuestions(q35);
+
+        Question q36 = new Question("If Logx (1 / 8) = - 3 / 2, then x is equal to ","4","8","9",1, Question.DIFFICULTY_HARD, Question.SUBJECT_3);
+        addQuestions(q36);
+
     }
 
     public void addNewQuestion(String questionvalue,String option1value,String option2value,String option3value,int correctvalue,String difficultyvalue,String subjectvalue)
